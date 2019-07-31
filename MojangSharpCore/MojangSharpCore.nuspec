@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>ChangFeng.MojangSharpCore</id>
+    <version>0.0.1</version>
+    <title>ChangFeng.MojangSharpCore</title>
+    <authors>ChangFeng</authors>
+    <owners>ChangFeng</owners>
+    <license type="expression">Apache-2.0</license>
+    <projectUrl>https://github.com/chang196700/MojangSharp</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>.Net Core implementation of MojangSharp</description>
+    <releaseNotes>Code conversion.</releaseNotes>
+    <copyright>Copyright 2019</copyright>
+  </metadata>
+</package>
