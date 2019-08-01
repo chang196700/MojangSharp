@@ -22,6 +22,8 @@ namespace MojangSharpCore.Responses
         /// </summary>
         public string RawMessage { get; internal set; }
 
+        public byte[] RawContent { get; set; }
+
         /// <summary>
         /// Contains an error if the request failed.
         /// </summary>

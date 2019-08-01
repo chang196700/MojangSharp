@@ -75,6 +75,7 @@ namespace MojangSharpCore.Api
             HttpResponseMessage httpResponse = null;
             Error error = null;
             string rawMessage = null;
+            byte[] rawContent = null;
 
             try
             {
@@ -89,6 +90,7 @@ namespace MojangSharpCore.Api
 
                 httpResponse = await Client.GetAsync(endpoint.Address);
                 rawMessage = await httpResponse.Content.ReadAsStringAsync();
+                rawContent = await httpResponse.Content.ReadAsByteArrayAsync();
                 httpResponse.EnsureSuccessStatusCode();
             }
             catch (Exception ex)
@@ -104,6 +106,7 @@ namespace MojangSharpCore.Api
             {
                 Code = httpResponse.StatusCode,
                 RawMessage = rawMessage,
+                RawContent = rawContent,
                 IsSuccess = httpResponse.IsSuccessStatusCode && (
                             httpResponse.StatusCode == HttpStatusCode.Accepted ||
                             httpResponse.StatusCode == HttpStatusCode.Continue ||
