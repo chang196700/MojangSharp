@@ -50,6 +50,12 @@ namespace MojangSharpCore.Responses
             [JsonProperty("id")]
             public string Uuid { get; internal set; }
 
+            [JsonProperty("email")]
+            public string Email { get; set; }
+
+            [JsonProperty("username")]
+            public string UserName { get; set; }
+
             /// <summary>
             /// Properties of this user
             /// </summary>
