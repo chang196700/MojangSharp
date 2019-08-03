@@ -7,6 +7,10 @@ namespace MojangSharpCore.Responses
 {
     public class HasJoinResponse : Response
     {
+        internal HasJoinResponse() : base()
+        {
+        }
+
         internal HasJoinResponse(Response response) : base(response)
         {
         }
