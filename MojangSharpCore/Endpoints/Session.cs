@@ -42,7 +42,8 @@ namespace MojangSharpCore.Endpoints
     {
         public HasJoin(string username, string serverId, string ip)
         {
-            Address = new Uri($"https://sessionserver.mojang.com/session/minecraft/hasJoined?username={username}&serverId={serverId}&ip={ip}");
+            Address = ip == null ? new Uri($"https://sessionserver.mojang.com/session/minecraft/hasJoined?username={username}&serverId={serverId}") :
+                new Uri($"https://sessionserver.mojang.com/session/minecraft/hasJoined?username={username}&serverId={serverId}&ip={ip}");
         }
 
         public override async Task<HasJoinResponse> PerformRequestAsync()
@@ -52,7 +53,7 @@ namespace MojangSharpCore.Endpoints
             if (Response.IsSuccess)
             {
                 JObject res = JObject.Parse(Response.RawMessage);
-                var obj = res.ToObject<HasJoinResponse>();
+                HasJoinResponse obj = res.ToObject<HasJoinResponse>();
 
                 return new HasJoinResponse(Response)
                 {
